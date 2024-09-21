@@ -8,10 +8,11 @@ import (
 
 func Solve() {
 	data := utils.LoadExercise("05")
-	fmt.Println(solve052(data))
+	fmt.Println(solveFirst(data))
+	fmt.Println(solveSecond(data))
 }
 
-func solve051(data string) int {
+func solveFirst(data string) int {
 	var (
 		vowels         = []string{"a", "e", "i", "o", "u"}
 		naughtyStrings = []string{"ab", "cd", "pq", "xy"}
@@ -29,7 +30,7 @@ func solve051(data string) int {
 	return total
 }
 
-func solve052(data string) int {
+func solveSecond(data string) int {
 	total := 0
 
 	alphabet := strings.Split("abcdefghijklmnopqrstuvwxyz", "")

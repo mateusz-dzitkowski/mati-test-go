@@ -8,10 +8,11 @@ import (
 
 func Solve() {
 	data := utils.LoadExercise("01")
-	fmt.Println(solve012(data))
+	fmt.Println(solveFirst(data))
+	fmt.Println(solveSecond(data))
 }
 
-func solve011(data string) int {
+func solveFirst(data string) int {
 	total := 0
 	for _, char := range data {
 		switch char {
@@ -26,7 +27,7 @@ func solve011(data string) int {
 	return total
 }
 
-func solve012(data string) (int, error) {
+func solveSecond(data string) (int, error) {
 	total := 0
 	for index, char := range data {
 		switch char {

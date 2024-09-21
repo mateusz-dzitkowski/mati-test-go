@@ -12,10 +12,11 @@ type Position struct {
 
 func Solve() {
 	data := utils.LoadExercise("03")
-	fmt.Println(solve032(data))
+	fmt.Println(solveFirst(data))
+	fmt.Println(solveSecond(data))
 }
 
-func solve031(data string) int {
+func solveFirst(data string) int {
 	visited := make(map[Position]struct{})
 
 	currentPosition := Position{}
@@ -44,7 +45,7 @@ func solve031(data string) int {
 	return totalVisited
 }
 
-func solve032(data string) int {
+func solveSecond(data string) int {
 	visited := make(map[Position]struct{})
 
 	santaPosition := Position{}

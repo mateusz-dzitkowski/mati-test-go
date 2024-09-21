@@ -9,10 +9,11 @@ import (
 
 func Solve() {
 	data := utils.LoadExercise("02")
-	fmt.Println(solve022(data))
+	fmt.Println(solveFirst(data))
+	fmt.Println(solveSecond(data))
 }
 
-func solve021(data string) int {
+func solveFirst(data string) int {
 	total := 0
 
 	for _, dimensions := range strings.Split(data, "\n") {
@@ -34,7 +35,7 @@ func solve021(data string) int {
 	return total
 }
 
-func solve022(data string) int {
+func solveSecond(data string) int {
 	total := 0
 
 	for _, dimensions := range strings.Split(data, "\n") {

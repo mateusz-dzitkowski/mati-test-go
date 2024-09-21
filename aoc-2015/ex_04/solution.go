@@ -11,10 +11,11 @@ import (
 
 func Solve() {
 	data := utils.LoadExercise("04")
-	fmt.Println(solve042(data))
+	fmt.Println(solveFirst(data))
+	fmt.Println(solveSecond(data))
 }
 
-func solve041(data string) (int, error) {
+func solveFirst(data string) (int, error) {
 	for number := range math.MaxInt {
 		if number == 0 {
 			continue
@@ -30,7 +31,7 @@ func solve041(data string) (int, error) {
 	return 0, errors.New("cant find the number")
 }
 
-func solve042(data string) (int, error) {
+func solveSecond(data string) (int, error) {
 	for number := range math.MaxInt {
 		if number == 0 {
 			continue

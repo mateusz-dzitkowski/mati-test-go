@@ -113,10 +113,10 @@ func (l *Lights) countBrightness() int {
 
 func Solve() {
 	data := utils.LoadExercise("06")
-	fmt.Println(solve06(data))
+	fmt.Println(solve(data))
 }
 
-func solve06(data string) int {
+func solve(data string) int {
 	lights := NewLights()
 
 	for _, line := range strings.Split(data, "\n") {
