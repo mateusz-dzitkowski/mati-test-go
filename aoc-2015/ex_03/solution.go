@@ -1,4 +1,4 @@
-package main
+package ex_03
 
 import (
 	"aoc_2015/utils"
@@ -10,7 +10,7 @@ type Position struct {
 	y int
 }
 
-func main() {
+func Solve() {
 	data := utils.LoadExercise("03")
 	fmt.Println(solve032(data))
 }

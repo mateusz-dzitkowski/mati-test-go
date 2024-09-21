@@ -1,4 +1,4 @@
-package main
+package ex_01
 
 import (
 	"aoc_2015/utils"
@@ -6,9 +6,8 @@ import (
 	"fmt"
 )
 
-func main() {
+func Solve() {
 	data := utils.LoadExercise("01")
-
 	fmt.Println(solve012(data))
 }
 

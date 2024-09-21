@@ -1,4 +1,4 @@
-package main
+package ex_06
 
 import (
 	"aoc_2015/utils"
@@ -111,7 +111,7 @@ func (l *Lights) countBrightness() int {
 	return total
 }
 
-func main() {
+func Solve() {
 	data := utils.LoadExercise("06")
 	fmt.Println(solve06(data))
 }
