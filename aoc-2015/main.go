@@ -1,7 +1,7 @@
 package main
 
-import "aoc_2015/ex_06"
+import "aoc_2015/ex_07"
 
 func main() {
-	ex_06.Solve()
+	ex_07.Solve()
 }
