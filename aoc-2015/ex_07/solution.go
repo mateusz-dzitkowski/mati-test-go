@@ -110,7 +110,7 @@ func Solve() {
 	fmt.Println(solveSecond(data))
 }
 
-func solveFirst(data string) int {
+func solveFirst(data string) uint16 {
 	circuit := make(map[string]*BitOp)
 
 	for _, line := range strings.Split(data, "\n") {
@@ -118,10 +118,10 @@ func solveFirst(data string) int {
 		circuit[key] = bitOp
 	}
 
-	return int(circuit["a"].resolve(circuit))
+	return circuit["a"].resolve(circuit)
 }
 
-func solveSecond(data string) int {
+func solveSecond(data string) uint16 {
 	circuit := make(map[string]*BitOp)
 
 	for _, line := range strings.Split(data, "\n") {
@@ -129,8 +129,8 @@ func solveSecond(data string) int {
 		circuit[key] = bitOp
 	}
 
-	circuit["b"].signal = 956
+	circuit["b"].signal = solveFirst(data)
 	circuit["b"].hasSignal = true
 
-	return int(circuit["a"].resolve(circuit))
+	return circuit["a"].resolve(circuit)
 }
