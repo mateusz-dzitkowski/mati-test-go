@@ -4,9 +4,11 @@ import (
 	"context"
 	"database/sql"
 	"fmt"
+	"github.com/gin-gonic/gin"
 	_ "github.com/joho/godotenv/autoload"
 	_ "github.com/lib/pq"
 	db "graph/db/sqlc"
+	"net/http"
 	"os"
 )
 
@@ -20,38 +22,17 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
-
 	queries := db.New(conn)
 
-	labels := []string{"a", "b", "c"}
-	nodes := make([]db.Node, len(labels))
-	for i, label := range labels {
-		node, err := queries.CreateNode(ctx, label)
-		if err != nil {
-			fmt.Println(err)
-		}
-		nodes[i] = node
-		fmt.Println(node)
-	}
+	fmt.Println(queries.GetNodes(ctx))
 
-	for _, params := range []db.CreateEdgeParams{
-		{
-			Src: nodes[0].ID,
-			Dst: nodes[1].ID,
-		},
-		{
-			Src: nodes[1].ID,
-			Dst: nodes[2].ID,
-		},
-		{
-			Src: nodes[2].ID,
-			Dst: nodes[0].ID,
-		},
-	} {
-		edge, err := queries.CreateEdge(ctx, params)
-		if err != nil {
-			fmt.Println(err)
-		}
-		fmt.Println(edge)
+	r := gin.Default()
+	r.GET("/node", func(c *gin.Context) {
+		c.JSON(http.StatusOK, gin.H{"message": "hello"})
+	})
+
+	err = r.Run()
+	if err != nil {
+		panic(err)
 	}
 }
