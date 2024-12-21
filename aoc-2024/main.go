@@ -1,7 +1,7 @@
 package main
 
-import "main/ex_03"
+import "main/ex_04"
 
 func main() {
-	ex_03.Solve()
+	ex_04.Solve()
 }
